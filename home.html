@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>Home page</h1>
+    {% if not tasks %}
+    <div class="text-center">
+        <i class="fas fa-clipboard-list fa-3x mb-3"></i>
+        <p>You don't have any tasks right now i think it's time to create</p>
+    </div>
+    {% endif %}
+
+    <div class="row">
+        
+        <div class="col-md-4">
+            <div class="card shadow-sm p-3 mb-4">
+                <h4>{{ "Update Task" if title == "update task" else "New Task" }}</h4>
+               
+                <form method="POST" action="{{ url_for('update', task_id=request.view_args['task_id']) if title == 'update task' else url_for('home') }}">
+                    {{ form.hidden_tag() }}
+                    <div class="mb-2">
+                        {{ form.title.label(class="form-label") }}
+                        {{ form.title(class="form-control form-control-sm") }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.content.label(class="form-label") }}
+                        {{ form.content(class="form-control form-control-sm") }}
+                    </div>
+                    {{ form.submit(class="btn btn-primary btn-sm w-100") }}
+                    {% if title == "update task" %}
+                        <button type = "submit">Cancel</button>
+                       
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+
+        
+        <div class="col-md-8">
+            <h4 style="text-align: right;">My work</h4>
+            {% for task in tasks %}
+            <div class="card mb-3 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">{{ task.title }}</h5>
+                    <p class="card-text">{{ task.content }}</p>
+                    
+                    <div class="d-flex justify-content-between align-items-center mt-2 border-top pt-2">
+                        <small class="text-muted">{{ task.date_posted.strftime('%d.%m %H:%M') }}</small>
+
+                        <div class="d-flex">
+                            <form action="{{ url_for('update', task_id = task.id)}}" method="GET">
+                                {{ form.hidden_tag() }}
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </form> 
+                           
+                           
+                            
+                           
+                            <form action="{{ url_for('delete', task_id=task.id) }}" method="POST">
+                                {{ form.hidden_tag() }}
+                                <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

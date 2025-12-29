@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block head %}
+    <title>Login</title>
+{% endblock %}
+
+
+{% block content %}
+    <div class = "content-section">
+        <form method="post", action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <div>
+                    {{ form.email.label }}
+                    {{ form.email() }}
+
+                    {% if form.email.errors %}
+                    {% for error in form.email.errors %}
+                        <span class="text-danger">{{ error }}</span>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+                
+                    {{ form.password.label }}
+                    {{ form.password() }}
+
+                    {% if form.password.errors %}
+                    {% for error in form.password.errors %}
+                    <span class = "text-danger">{{ error }}</span>
+                    {% endfor %}
+                    {% endif %}
+
+                
+
+                
+
+            </fieldset>
+            <div class ="btn btn-primary">
+                {{ form.submit() }}
+            </div>
+        </form>
+        <p>
+            Do you want to create account 
+            <a href="{{ url_for('register') }}">Create One</a>
+        </p>
+    </div>
+
+{% endblock %}

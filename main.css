@@ -1,0 +1,205 @@
+/* 1. Глобальні налаштування */
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, sans-serif;
+    background-color: #f8fafc;
+    display: flex; /* Робимо дві колонки: меню + контент */
+    min-height: 100vh;
+}
+
+/* 2. Рожевий Sidebar (фіксований) */
+.nav-menu {
+    width: 240px;
+    background-color: #fdd4d4;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 40px 20px;
+    z-index: 1000;
+}
+
+.nav-menu a {
+    display: block;
+    padding: 12px 15px;
+    color: #2d3436;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.nav-menu a:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+
+.main-content {
+    margin-left: 100px;
+
+    margin-left: 240px; 
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding: 60px 20px;
+}
+
+
+/* 4. Естетична картка (для форм та тасок) */
+.card {
+    justify-content: space-between;
+    margin-left: 200px;
+    background: white;
+    padding: 40px;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 450px; /* Ідеальна ширина для центру */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* 5. Заголовки */
+h1 {
+    font-size: 2rem;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 30px;
+}
+
+/* 6. Поля вводу (Inputs) */
+input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    background: #fdfdfd;
+    margin-bottom: 15px;
+    outline: none;
+    font-size: 1rem;
+}
+
+input:focus {
+    border-color: #ffffff;
+}
+
+/* 7. Кнопка */
+.btn-main {
+    width: 100%;
+    padding: 14px;
+    background: #68ceea;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-main:hover {
+    background: #018982;
+    transform: translateY(-2px);
+}
+
+
+.content-section{
+    margin-left: 600px;
+    margin-top: 100px;
+    background: white;
+    padding: 40px;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.text-center{
+    margin-left: 600px;
+}
+
+
+
+/* Правая колонка (Список задач) */
+.col-md-8 {
+    flex: 1;                /* Занимает всё оставшееся место */
+    max-width: 600px;       /* Но не шире 600px */
+    display: flex;
+    flex-direction: column;
+}
+
+
+.hello {
+    margin-left: 100px ;
+    margin-bottom: 200px;
+    text-align: center;
+    color: #000204;
+}
+
+/*
+.content-section {
+    margin: 100px auto 30px auto;  
+    background: white;
+    padding: 40px;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+
+.col-md-8 {
+    margin: 0 auto 50px auto; 
+    width: 100%;
+    max-width: 600px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.text-center {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+*/
+/*
+
+.content-section{
+    margin-left: 600px;
+    margin-top: 100px;
+    background: white;
+    padding: 40px;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.text-center{
+    margin-left: 600px;
+}
+.col-md-8{
+
+    margin-left: 600px;
+    margin-bottom: -100px;
+
+
+
+
+}
+    */

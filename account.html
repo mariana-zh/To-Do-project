@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+
+
+
+
+{% block content %}
+
+{% if current_user.is_authenticated %}
+    <div class="container">
+        <div class="card">
+            <h1>Your profile</h1>
+            <p><strong>Name:</strong> {{ current_user.username }}</p>
+            <p><strong>Email:</strong> {{ current_user.email }}</p>
+            <p><strong>Points:</strong> {{ current_user.points }}</p>
+            <button class ="btn-main"><a href="{{ url_for('home') }}">Tasks</a></button>
+        </div>
+    </div>
+    {% endif %}
+{% endblock %}
+
