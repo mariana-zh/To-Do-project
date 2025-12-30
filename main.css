@@ -1,5 +1,37 @@
 /* 1. Глобальні налаштування */
 * { box-sizing: border-box; }
+@media (max-width: 768px) {
+    /* 1. Меню переїжджає вгору або ховається */
+    .nav-menu {
+        width: 100%;
+        height: auto;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px;
+    }
+
+    /* 2. Контент займає всю ширину без відступу зліва */
+    .main-container, .main-content, .container {
+        margin-left: 0 !important;
+        width: 100% !important;
+        padding: 20px;
+    }
+
+    /* 3. Картки стають на всю ширину */
+    .card, .content-section {
+        max-width: 95%;
+        padding: 20px;
+    }
+
+    /* 4. Якщо у тебе була сітка (форма зліва, таски справа), ставимо їх один під одного */
+    .home-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 
 body {
     margin: 0;
